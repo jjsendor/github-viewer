@@ -1,0 +1,27 @@
+#results {
+	margin-top: 60px;
+	clear: left;
+}
+
+.search_query {
+	font-style: italic;
+}
+
+.search_total {
+	font-weight: bold;
+}
+
+.results_list {
+	margin-left: 25px;
+}
+
+.repo_link {
+	display: block;
+	clear: left;
+	font-size: 12px;
+	margin-left: 32px;
+}
+
+.pagination a {
+	margin: 4px;
+}
