@@ -21,7 +21,7 @@
 		<r:layoutResources />
 	</head>
 	<body>
-		<div class="page-header"><h1>GitHub repositories search</h1></div>
+		<div class="page-header"><g:link controller="repositories" action="index"><h1>GitHub repositories search</h1></g:link></div>
 		<g:layoutBody/>
 		<div class="footer" role="contentinfo"></div>
 		<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
