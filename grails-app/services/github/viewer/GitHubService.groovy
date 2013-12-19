@@ -2,14 +2,23 @@ package github.viewer
 
 import grails.plugins.rest.client.RestBuilder
 
+/**
+ * Communication with GitHub API: http://developer.github.com/v3/
+ */
 class GitHubService {
 
 	static transactional = false
 
+    // GitHub API root address used to build queries
     def apiRoot = "https://api.github.com"
     def rest = new RestBuilder()
+    // maximum number of commits fetched in queries
     def maxCommits = 100
 
+    /**
+     * Searches repositories based on query <code>q</code>.
+     * Return JSON entity with search results.
+     */
     def searchRepositories(q, offset, max) {
 		def page = offset / max + 1
     	def response
@@ -32,6 +41,10 @@ class GitHubService {
     	}
     }
 
+    /**
+     * Lists contributors for a given repository based on
+     * <code>owner</code> and <code>repo</code> parameters.
+     */
     def listContributors(owner, repo) {
         def response
 
@@ -53,6 +66,10 @@ class GitHubService {
         }
     }
 
+    /**
+     * Lists last {@see #maxCommits} commits for a given repository identified by
+     * <code>owner</code> and <code>repo</code> parameters.
+     */
     def listCommits(owner, repo) {
         def response
 
